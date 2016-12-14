@@ -1,0 +1,1826 @@
+Demo server, in the following steps:
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+Step 1. Start a UDP server, listening on port 9898.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"KQw77Sto7htzPk5p","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"n01dX6RlGRlShA0N","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:n01dX6RlGRlShA0N
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(107 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move not detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ZP6x0uXDjx32X1LY","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ZP6x0uXDjx32X1LY
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"weE86ZknHMzEmdxp","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Cg3CZZQJdKzqL2b1","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Cg3CZZQJdKzqL2b1
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"WK8iDhe3eO0QGAou","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:WK8iDhe3eO0QGAou
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"oTp9i4Xr6PGr9N8I","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"6AmoraeLarorJiTR","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:6AmoraeLarorJiTR
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"MvGyiCromncTfv88","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:MvGyiCromncTfv88
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"tycH9WBPVoFQPKTQ","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(104 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"UVpZTI2BFxTCbyUc","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:UVpZTI2BFxTCbyUc
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Z1DYzO4zFM4Ez9Zn","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Z1DYzO4zFM4Ez9Zn
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"Z4vRThGJYqEGEJFw","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"1fp7pqjnyuAIl77z","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:1fp7pqjnyuAIl77z
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"nGalaMtp5Mxvoc0f","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:nGalaMtp5Mxvoc0f
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"SpWH2BJCDsaQcPyi","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"okRRTzXCivkeRMPQ","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:okRRTzXCivkeRMPQ
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"3UV6JZCT18IRcgys","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:3UV6JZCT18IRcgys
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"Zfc6FCUlLjrCHHAF","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"TdXzq3NGCtZndvGT","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:TdXzq3NGCtZndvGT
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"kMNdDcNSKnVSoV9Z","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:kMNdDcNSKnVSoV9Z
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"4njSIdErpAtoMXNq","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"v1sDpvuASy5kifU7","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:v1sDpvuASy5kifU7
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"g9CvCsAFbPyarCUT","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:g9CvCsAFbPyarCUT
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"4j4gdpMhAZ0Vh3lD","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"A6kbKk8ZTSD9BNqd","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:A6kbKk8ZTSD9BNqd
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"sCEtxiK9HMxvbGlm","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:sCEtxiK9HMxvbGlm
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"WuNHgKIAFkqanMeY","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(107 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move not detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"bAiuiJIJ4mrhcff2","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:bAiuiJIJ4mrhcff2
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"k0EhXpdKET6J9nKY","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:k0EhXpdKET6J9nKY
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"6MCwLFYRP51YY5Eo","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"FjyR8ZI74ovCTpQG","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:FjyR8ZI74ovCTpQG
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"vhQ4eUskFSYp7pUJ","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:vhQ4eUskFSYp7pUJ
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"kI74MsraizENGXep","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"kNzlxRUp7IU7krxf","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:kNzlxRUp7IU7krxf
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"U9xwYNOKJNFVcSLq","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:U9xwYNOKJNFVcSLq
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"iYnO8BvRjb8venki","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(107 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move not detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"pKBlmUmdR2x8NL4H","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:pKBlmUmdR2x8NL4H
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"WVE4ok5Zb5BtJlg9","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:WVE4ok5Zb5BtJlg9
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"fZomzS4uoWjgpexm","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"LZL0cXcNBBsvKNT4","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:LZL0cXcNBBsvKNT4
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"TPVQqlruxzYdd5G1","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:TPVQqlruxzYdd5G1
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"fYtPzucv5ahQLfo1","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"xpv8RvHWYZNkcMsh","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:xpv8RvHWYZNkcMsh
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Idu8UORjf21pr00g","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Idu8UORjf21pr00g
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"XIoXhTRpP0OfGNyq","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"RiZPEZzcxnRLJOur","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:RiZPEZzcxnRLJOur
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"qVznnRBFLtwiuv72","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:qVznnRBFLtwiuv72
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"fVD41CfLCA8RrxJZ","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"MLUWPM4RlscWBlDp","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:MLUWPM4RlscWBlDp
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"z2zeiboW2FVBIf62","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:z2zeiboW2FVBIf62
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"3z9kqp5qNOPoK0Gj","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"qJ2ziG5eK9lBKVBO","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:qJ2ziG5eK9lBKVBO
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"4fZEz2x5D6W3ZzAM","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:4fZEz2x5D6W3ZzAM
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"OIMUv7O31OCAZQxx","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(107 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move not detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"pDbt5NXOPgblTHHf","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:pDbt5NXOPgblTHHf
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"veOCgKiXrGitJ4gE","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:veOCgKiXrGitJ4gE
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"657rgHjYudujqwj7","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"XXUooZbk2di5MMPW","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:XXUooZbk2di5MMPW
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"IRSVnI3h4LZl1Vsr","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:IRSVnI3h4LZl1Vsr
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"eMUrVnYRbWHrzhdr","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Xd48v9jwtmTkHA7d","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Xd48v9jwtmTkHA7d
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"FDZtzuermehq7k4W","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:FDZtzuermehq7k4W
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"RCIlG9jwdsuTVI2W","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"e5NIkZvHu6TO29Fk","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:e5NIkZvHu6TO29Fk
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"PkOPQkjgxd17AMYu","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:PkOPQkjgxd17AMYu
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"6EmQoTYTdb7y3P4b","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"D9gNFRRWzCOze1Vq","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:D9gNFRRWzCOze1Vq
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"PhHJRoY2w1GgloVV","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:PhHJRoY2w1GgloVV
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"2mINeBzqbZkSxGGz","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Js0MGm3CK7zTr2yx","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Js0MGm3CK7zTr2yx
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"2hJwlmBbKeGr3Bw1","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:2hJwlmBbKeGr3Bw1
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"CFfQbzFGg3cH48Yb","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Pc76a8ioJKOwVfw0","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Pc76a8ioJKOwVfw0
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"wWmO8CDixPwzYo3Q","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:wWmO8CDixPwzYo3Q
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"44CunX2ouxEqRX3N","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ePp3bntdzrr8msoW","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ePp3bntdzrr8msoW
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"gwmwpIZkVPBjhwIL","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:gwmwpIZkVPBjhwIL
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"fsrPgiULSFjproUB","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"IJGc6lX1pW8QUyDY","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:IJGc6lX1pW8QUyDY
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"qDT8QX0ma52gPBmr","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:qDT8QX0ma52gPBmr
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"QOo2bj4lvjJ4UFE9","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"brXSrD5uj0B2BuHo","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:brXSrD5uj0B2BuHo
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"5jR0yWDfqrOt0nQD","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:5jR0yWDfqrOt0nQD
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"rFfsmdWAv6rw28QC","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"TEpIkLcb5jcsjrxg","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:TEpIkLcb5jcsjrxg
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"HZWXNaf8lyhVD3Bq","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:HZWXNaf8lyhVD3Bq
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"DizoGPvkl5Oe04EK","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"kuATiPjaAXg5wZCd","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:kuATiPjaAXg5wZCd
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"XUeEJszply9VipND","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:XUeEJszply9VipND
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"eiCOnO44Ah0uoRJF","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Ll9pIXndj3eJM8Tj","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Ll9pIXndj3eJM8Tj
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"I2fQuvbHngvfx8R5","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:I2fQuvbHngvfx8R5
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"GX4V5vl3FEZe0NoM","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"i4kCQ6uvCoPYzH2S","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:i4kCQ6uvCoPYzH2S
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"hUMJ2oOcvlF8PjrM","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:hUMJ2oOcvlF8PjrM
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"JbkPPkNHtPq9pJXI","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"YRAuV2S2XEUCfot5","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:YRAuV2S2XEUCfot5
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"DALGRC3M1wdwZGde","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:DALGRC3M1wdwZGde
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(107 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move not detected
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"DVvDSdJ3BqUeSMHE","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"oxHipLNb00o2in39","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:oxHipLNb00o2in39
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"reXSlnWZP72AgDIq","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:reXSlnWZP72AgDIq
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"HhYlvDcoWu9hSc73","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"WzTwdMYSt1I9bSjv","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:WzTwdMYSt1I9bSjv
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"TkwCfaTsXDf2H9cL","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:TkwCfaTsXDf2H9cL
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"6t0mHFoVoc8BgBqG","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ySECL4sY6lKkMXct","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ySECL4sY6lKkMXct
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"vXLnw4puMCbSjRNu","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:vXLnw4puMCbSjRNu
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"HIZLFuwxnFAnpyT5","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"WaEl5qGXLy7IDCHl","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:WaEl5qGXLy7IDCHl
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"bwxhtSbrH86lsu2r","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:bwxhtSbrH86lsu2r
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"aErFF62R4Y7bUoFX","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"s7xFFvI77BkPnvbl","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:s7xFFvI77BkPnvbl
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"qOKj8xUQRBhmeAyD","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:qOKj8xUQRBhmeAyD
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"NuKROm03Okep4FoX","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Y0AE5Xiw88KucOQK","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Y0AE5Xiw88KucOQK
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"83nSoeUf5cwDNL0Y","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:83nSoeUf5cwDNL0Y
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"qPSwUsxV9Mk4aZco","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Ngkfikw6Q4TEv93o","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Ngkfikw6Q4TEv93o
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Ifzvrq8sjgJERtH2","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Ifzvrq8sjgJERtH2
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"nQNg4OinfBkuTjT6","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"Shr2CsrjOzXGCtoG","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:Shr2CsrjOzXGCtoG
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"mVj6FDgorDOM6x1F","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:mVj6FDgorDOM6x1F
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"sNc7lOH1nVEbpl5n","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"kLWLX32wDKG2iiBe","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:kLWLX32wDKG2iiBe
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"HzhO7zW1dYDE2keC","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:HzhO7zW1dYDE2keC
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"GbY7kLZQxHrbJz3v","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"zBZVqUJo8DWkrHyg","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:zBZVqUJo8DWkrHyg
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ouq4qpBuu6VTmSUu","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ouq4qpBuu6VTmSUu
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"jZ8TVoFSCrbU8N2v","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(88 bytes) from client 192.168.0.100:4321
+
+Step 7. Got switch:158d00010d52c5's heartbeat:{}
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"NWIBj86tc57kRLFQ","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:NWIBj86tc57kRLFQ
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"NTTYNBDlpLTb2NYy","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:NTTYNBDlpLTb2NYy
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"qsS7njUAIpl1JNVO","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"u8z3xUYw2DKcaA1d","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:u8z3xUYw2DKcaA1d
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"MqQu6wNOks3s5ujr","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:MqQu6wNOks3s5ujr
+recv {"cmd":"heartbeat","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(110 bytes) from client 192.168.0.100:4321
+
+Step 7. Got motion sensor:158d0001051e02's heartbeat: move not detected
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"128pSsXgFbBDPU3b","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"32sypN8S6Oq1iagX","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:32sypN8S6Oq1iagX
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ToABkBgyxqfrjpmt","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ToABkBgyxqfrjpmt
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"2z4cpd6BjoomCoqy","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"rcMmEc5wNTPwEnp2","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:rcMmEc5wNTPwEnp2
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(104 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ky4U0AATE8clquNl","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ky4U0AATE8clquNl
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"zO2H9tJ0ZcahDqph","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"sWCOrSdtnheR86bl","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:sWCOrSdtnheR86bl
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"SdA6ffOjqG2GZEgS","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:SdA6ffOjqG2GZEgS
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"alrBH0MdeIupXVVy","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"gtWS8ccUyast5TVN","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:gtWS8ccUyast5TVN
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"1vRNKEWTZKoNzCGq","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:1vRNKEWTZKoNzCGq
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"dJ4VJS7Xj6kRtMiV","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"1XVW1w7MTJTATC9I","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:1XVW1w7MTJTATC9I
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"MWlvlhNocQRHhvbE","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:MWlvlhNocQRHhvbE
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"IlP4YZBAgvu5YO2S","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"NBLL89aX3JAIFccZ","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:NBLL89aX3JAIFccZ
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"07QxjpBOLuz3mGld","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:07QxjpBOLuz3mGld
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"MXnW4WKeA3vnFvAu","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"eBwms35aRrFqhVn4","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:eBwms35aRrFqhVn4
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"9CUpeChWrAo7aS4A","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:9CUpeChWrAo7aS4A
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"h4DGBnb9tmMIO1MQ","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"YV3AbMBsLEr0mTe8","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:YV3AbMBsLEr0mTe8
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(107 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move not detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"7zWFcs2DbJdmBdcM","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:7zWFcs2DbJdmBdcM
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"2kP6zH6uwVSTBx9B","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"r0pYfuCCIiDrspET","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:r0pYfuCCIiDrspET
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(104 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move detected
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"BcI5t1sm8oPkQyEg","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:BcI5t1sm8oPkQyEg
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"sgI07RwpEal4hsLK","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"ihJOtitQkD4mbvo5","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:ihJOtitQkD4mbvo5
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"hIgpeBPmNWvPeZbl","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"KD8HcpP7Ovxnnais","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:KD8HcpP7Ovxnnais
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"XJdWCwY247UYgPWO","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:XJdWCwY247UYgPWO
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"5vaLpTsBTp6kwPLH","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"WnH49N26Rpp71z0H","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:WnH49N26Rpp71z0H
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"R9MQicuNIOwGvyi0","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:R9MQicuNIOwGvyi0
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"HK4E8ve3Z9jYAG6J","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"no_motion\"}"}(109 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move not detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"O2Z0Hk5I3FBqdtr9","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:O2Z0Hk5I3FBqdtr9
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"DBVSxTaSf7UmNjvF","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:DBVSxTaSf7UmNjvF
+recv {"cmd":"report","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(104 bytes) from client 192.168.0.100:4321
+
+Step 6. Got motion sensor:158d0001051e02's report: move detected
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"711fILyHg5ONADgz","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"pX0lP0CAFsQXsXht","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:pX0lP0CAFsQXsXht
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"agbwYbQ2SVqLcpPV","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:agbwYbQ2SVqLcpPV
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"8YJJtqQQFrYr3Jsg","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"8gbXydzo5bO9HopM","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:8gbXydzo5bO9HopM
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"GtjcnsQLmjRaxpG3","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:GtjcnsQLmjRaxpG3
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"7FqBHjMesDFyq8k9","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"uIipWHOFcmxrU0y3","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:uIipWHOFcmxrU0y3
+recv {"cmd":"heartbeat","model":"gateway","sid":"f0b4299a9b00","short_id":"0","token":"lROsIaDk65csWfHn","data":"{\"ip\":\"192.168.0.100\"}"}(136 bytes) from client 192.168.0.100:4321
+
+Step 7. Got gateway:f0b4299a9b00's heartbeat:{"ip":"192.168.0.100"} with token:lROsIaDk65csWfHn
+Step 2. Start another round.
+Step 2. Send {"cmd": "whois"} to a multicast address 224.0.0.50:4321.
+recv {"cmd":"iam","port":"9898","sid":"f0b4299a9b00","model":"gateway","ip":"192.168.0.100"}(87 bytes) from client 192.168.0.100:4321
+
+Step 3. Send {"cmd":"get_id_list"} to 192.168.0.100:9898
+recv {"cmd":"get_id_list_ack","sid":"f0b4299a9b00","token":"KSXCbelMmupQggxs","data":"[\"158d0001051e02\",\"158d00010d52c5\",\"158d0000fba5ca\",\"158d0001143109\"]"}(160 bytes) from client 192.168.0.100:9898
+
+Step 4. Send {"cmd":"read", "sid":"158d0001051e02"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d00010d52c5"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0000fba5ca"} to 192.168.0.100:9898
+Step 4. Send {"cmd":"read", "sid":"158d0001143109"} to 192.168.0.100:9898
+recv {"cmd":"read_ack","model":"motion","sid":"158d0001051e02","short_id":855,"data":"{\"status\":\"motion\"}"}(106 bytes) from client 192.168.0.100:9898
+
+Step 5. Got motion sensor:158d0001051e02's data: move detected
+recv {"cmd":"read_ack","model":"switch","sid":"158d00010d52c5","short_id":27996,"data":"{}"}(87 bytes) from client 192.168.0.100:9898
+
+Step 5. Got switch:158d00010d52c5's data:{}
+recv {"cmd":"read_ack","model":"magnet","sid":"158d0000fba5ca","short_id":21056,"data":"{\"status\":\"close\"}"}(107 bytes) from client 192.168.0.100:9898
+
+Step 5. Got contact/magnet sensor:158d0000fba5ca's data: contact detected
+recv {"cmd":"read_ack","model":"sensor_ht","sid":"158d0001143109","short_id":64870,"data":"{\"temperature\":\"2238\",\"humidity\":\"5459\"}"}(136 bytes) from client 192.168.0.100:9898
+
+Step 5. Got temperature/humidity sensor:158d0001143109's data: temperature 22.38, humidity 54.59
