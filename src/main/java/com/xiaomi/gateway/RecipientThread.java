@@ -33,7 +33,7 @@ public class RecipientThread implements Runnable {
             if(jsonCallback != null)
                 jsonCallback.json(msg);
 
-            System.out.println("[Multicast  Receiver] Received:" + msg);
+            //System.out.println("[Multicast  Receiver] Received:" + msg);
         }
     }
 

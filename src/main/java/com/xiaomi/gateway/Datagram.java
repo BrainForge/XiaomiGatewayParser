@@ -84,4 +84,9 @@ public class Datagram {
         String json = "{\"cmd\":\"get_id_list\"}";
         sendJsonToGateway(json);
     }
+
+    public void getDataForSid(String sid) {
+        String json = "{\"cmd\":\"read\", \"sid\":\""+sid+"\"}";
+        sendJsonToGateway(json);
+    }
 }
