@@ -80,7 +80,7 @@ public class Datagram {
         }
     }
 
-    private void getDeviceList() {
+    public void getDeviceList() {
         String json = "{\"cmd\":\"get_id_list\"}";
         sendJsonToGateway(json);
     }

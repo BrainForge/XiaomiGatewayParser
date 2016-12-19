@@ -20,6 +20,7 @@ public class GetDatagramTask {
 
     @Scheduled(fixedRate=5000)
     public void getData() {
+
         datagram.getDataForSid("158d0001143109");
 
         datagram.setJsonCallback((json -> {
